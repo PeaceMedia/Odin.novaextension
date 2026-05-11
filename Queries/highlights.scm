@@ -10,7 +10,7 @@
 [
   "import"
   "package"
-] @include
+] @keyword.construct
 
 ; Keywords
 
@@ -55,7 +55,7 @@
   "where"
   "break"
   (fallthrough_statement)
-] @conditional
+] @keyword.conditional
 
 ((ternary_expression
   [
@@ -73,15 +73,15 @@
   "for"
   "do"
   "continue"
-] @repeat
+] @keyword.conditional
 
 ; Variables
 
-(identifier) @variable
+(identifier) @identifier.variable
 
 ; Namespaces
 
-(package_declaration (identifier) @namespace)
+(package_declaration (identifier) @identifier.type.declare)
 
 (import_declaration alias: (identifier) @namespace)
 
@@ -109,14 +109,14 @@
 
 (overloaded_procedure_declaration (identifier) @function)
 
-(call_expression function: (identifier) @function.call)
+(call_expression function: (identifier) @identifier.method (#set! "priority" 105))
 
 ; Types
 
 (type (identifier) @type)
 
-((type (identifier) @type.builtin)
-  (#any-of? @type.builtin
+((type (identifier) @identifier.type.builtin)
+  (#any-of? @identifier.type.builtin
     "bool" "byte" "b8" "b16" "b32" "b64"
     "int" "i8" "i16" "i32" "i64" "i128"
     "uint" "u8" "u16" "u32" "u64" "u128" "uintptr"
@@ -194,7 +194,7 @@
 
 (string) @string
 
-(character) @character
+(character) @string
 
 (escape_sequence) @string.escape
 
@@ -203,7 +203,7 @@
 [
   (uninitialized)
   (nil)
-] @constant.builtin
+] @value.null
 
 ((identifier) @variable.builtin
   (#any-of? @variable.builtin "context" "self"))
@@ -294,3 +294,10 @@
 ; Errors
 
 (ERROR) @error
+
+[
+  (number)
+  (float)
+] @value.number
+
+(boolean) @value.boolean

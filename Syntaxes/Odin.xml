@@ -2,7 +2,7 @@
 <syntax name="odin">
     <meta>
         <name>Odin</name>
-        <type>script</type>
+        <type>compiled</type>
         <preferred-file-extension>odin</preferred-file-extension>
     </meta>
 
@@ -12,10 +12,10 @@
 
     <indentation>
         <increase>
-            <expression></expression>
+            <expression>\{</expression>
         </increase>
         <decrease>
-            <expression></expression>
+            <expression>\}</expression>
         </decrease>
     </indentation>
 
@@ -39,7 +39,7 @@
 
     <tree-sitter>
         <highlights path="highlights.scm" />
-        <!-- <folds path="folds.scm" /> -->
+        <folds path="folds.scm" />
         <indents path="indents.scm" />
         <symbols path="symbols.scm" />
         <locals path="locals.scm" />
