@@ -4,5 +4,16 @@
     "organization": "Peace Media",
     "description": "Syntax highlighting for Odin.",
     "version": "0.1",
-    "categories": ["languages"]
+    "categories": ["languages", "issues"],
+
+    "main": "main.js",
+
+    "activationEvents": [
+        "onLanguage:odin"
+    ],
+
+    "entitlements": {
+        "process": true
+    },
+
 }
