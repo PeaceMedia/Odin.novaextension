@@ -16,4 +16,48 @@
         "process": true
     },
 
+    "config": [
+        {
+            "key": "biz.peacemedia.odin-for-nova.issues.section",
+            "title": "Issues",
+            "type": "section",
+            "children": [
+                {
+                    "key": "biz.peacemedia.odin-for-nova.provide-issues",
+                    "title": "Enable issues",
+                    "description": "Flag syntax errors and other issues in Odin code.",
+                    "type": "boolean",
+                    "default": false
+                },
+                {
+                    "key": "biz.peacemedia.odin-for-nova.odin-path",
+                    "title": "Path to \"odin\" binary",
+                    "description": "Leave blank to look for the binary in your $PATH.",
+                    "type": "path",
+                    "default": ""
+                },
+            ]
+        },
+        {
+            "key": "biz.peacemedia.odin-for-nova.ols.section",
+            "title": "OLS (Odin Language Server)",
+            "type": "section",
+            "children": [
+                {
+                    "key": "biz.peacemedia.odin-for-nova.use-ols",
+                    "title": "Use OLS",
+                    "description": "Provide hints on hover, autocompletions, and other nice features.",
+                    "type": "boolean",
+                    "default": false
+                },
+                {
+                    "key": "biz.peacemedia.odin-for-nova.ols-path",
+                    "title": "Path to \"ols\" binary",
+                    "description": "Leave blank to look for the binary in your $PATH.",
+                    "type": "path",
+                    "default": ""
+                }
+            ]
+        }
+    ]
 }

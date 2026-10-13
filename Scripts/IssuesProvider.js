@@ -13,8 +13,14 @@ class IssuesProvider {
       let issues = new IssueCollection();
       let output = '';
 
+      let odinLoc = nova.config.get('biz.peacemedia.odin-for-nova.odin-path');
+      if (odinLoc === '' || odinLoc === null) {
+        // Search in $PATH
+        odinLoc = 'odin';
+      }
+
       let processOptions = {
-        args: ['odin', 'test', nova.workspace.path, '-json-errors']
+        args: [odinLoc, 'test', nova.workspace.path, '-json-errors']
       }
 
       const process = new Process('/usr/bin/env', processOptions);
@@ -77,8 +83,9 @@ class IssuesProvider {
       });
 
       try {
-        // console.log('About to launch process');
-        process.start()
+        console.log('About to launch Odin process');
+        // console.log(JSON.stringify(processOptions));
+        process.start();
       } catch (e) {
         console.error('error:', e);
         reject(e);

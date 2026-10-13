@@ -4,12 +4,18 @@ class Ols {
   }
 
   start() {
+    let olsLoc = nova.config.get('biz.peacemedia.odin-for-nova.ols-path');
+    if (olsLoc === '' || olsLoc === null) {
+      // Search in $PATH
+      odinLoc = 'ols';
+    }
+
     const serverOptions = {
-      path: "/Users/albright/Code/ols/ols"
+      path: olsLoc
     };
     const clientOptions = {
-      syntaxes: ["odin"],
-      debug: true
+      syntaxes: ["odin"]
+      // debug: true
     };
 
     this.client = new LanguageClient(
