@@ -1,8 +1,8 @@
 {
     "identifier": "biz.peacemedia.odin-for-nova",
-    "name": "Odin",
+    "name": "Odin for Nova",
     "organization": "Peace Media",
-    "description": "Syntax highlighting for Odin.",
+    "description": "Syntax highlighting, issues, and language server integration for Odin.",
     "version": "0.1",
     "categories": ["languages", "issues"],
 
