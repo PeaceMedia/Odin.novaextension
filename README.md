@@ -2,7 +2,7 @@
 
 An extension for the [Nova](https://nova.app/) code editor providing syntax highlighting support, issue reporting/syntax checking, and language server integration for the [Odin programming language](https://odin-lang.org/).
 
-[![NO AI](https://no-ai-badge.nuxy.dev/badge.svg)](https://github.com/nuxy/no-ai-badge#no-ai-badge) - 100% human written code
+Conceived and written by a human.
 
 ## Installation
 
