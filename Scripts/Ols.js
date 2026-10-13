@@ -14,22 +14,22 @@ class Ols {
       path: olsLoc
     };
     const clientOptions = {
-      syntaxes: ["odin"]
+      syntaxes: ['odin']
       // debug: true
     };
 
     this.client = new LanguageClient(
-      "ols",
-      "Odin Language Server",
+      'ols',
+      'Odin Language Server',
       serverOptions,
       clientOptions
     );
 
     this.client.onDidStop(function() {
-      console.error("ols died.");
+      console.error('ols died.');
     })
 
-    console.info("Attempting start of ols.");
+    console.info('Attempting start of ols.');
     this.client.start();
   }
 
