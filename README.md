@@ -2,11 +2,13 @@
 
 An extension for the [Nova](https://nova.app/) code editor providing syntax highlighting support, issue reporting/syntax checking, and language server integration for the [Odin programming language](https://odin-lang.org/).
 
-Conceived and written by a human.
+Conceived and written by [a human](https://albright.pro/).
 
 ## Installation
 
 The easiest way to install this extension is to simply use Nova's built-in Extension Library feature. From the Extensions menu, select "Extension Library…". In the resulting window, use the "Search for New Extensions" search box at the top and search for "Odin." This extension should pop right up.
+
+Note, however, that its most interesting features require a bit of configuration. Keep reading for more information.
 
 ## Configuration
 
@@ -32,12 +34,17 @@ OLS is highly configurable via JSON files. See its documentation for more inform
 
 ## Bugs & missing features
 
-- Incorrect issues are given for import statements that use collections. We can probably fix this by looking for and parsing an ols.json file in the project and using that to tell the Odin binary about collections.
 - "odinfmt" from the OLS project is not currently supported. I'll need to do some more experimentation to see if it's possible and/or would make sense to use that with Nova.
 - Sometimes the extension tries to start OLS when it's already running, causing an exception to be logged to the extension console. I'm not yet sure why that's happening or if there's anything I can do about that.
 
+## Nota bene
+
+Note that this project is not developed by the core Odin team. Please do not contact them for support with this extension. Instead, create an issue in [this project's GitHub issue queue](https://github.com/PeaceMedia/Odin.novaextension/issues), or email me at: contact@albright.pro
+
+LLM-generated contributions to this project will not be accepted.
+
 ## Acknowledgements
 
-- Note that this project is not developed by the core Odin team. Please do not contact them for support with this extension. Instead, create an issue in [this project's GitHub issue queue](https://github.com/PeaceMedia/Odin.novaextension/issues), or email me at: contact@albright.pro
 - Tree-sitter support provided by the [tree-sitter-odin project](https://github.com/tree-sitter-grammars/tree-sitter-odin), licensed under the [MIT license](https://mit-license.org/).
 - Logo modified from the [official artwork](https://github.com/odin-lang/artwork), licensed under the [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en) license. This is a copyleft license so Odin for Nova's extension artwork is also under this license.
+- The `example/demo.odin` file is from the [Odin code repo](https://github.com/odin-lang/Odin) (`examples/demo/demo.odin`), which is licensed under the 3-clause BSD license.
