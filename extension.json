@@ -5,6 +5,10 @@
     "description": "Syntax highlighting, issues, and language server integration for Odin.",
     "version": "0.1",
     "categories": ["languages", "issues"],
+    "license": "BSD 2-clause",
+    "bugs": "https://github.com/PeaceMedia/Odin.novaextension/issues",
+    "homepage": "https://github.com/PeaceMedia/Odin.novaextension",
+    "repository": "https://github.com/PeaceMedia/Odin.novaextension",
 
     "main": "main.js",
 
