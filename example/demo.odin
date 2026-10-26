@@ -37,8 +37,8 @@ import "core:math/rand"
 	Nightly Builds - https://odin-lang.org/docs/nightly/
 		Get the latest nightly builds of Odin.
 	More Odin Examples - https://github.com/odin-lang/examples
-		This repository contains examples of how certain things can be accomplished 
-		in idiomatic Odin, allowing you learn its semantics, as well as how to use 
+		This repository contains examples of how certain things can be accomplished
+		in idiomatic Odin, allowing you learn its semantics, as well as how to use
 		parts of the core and vendor package collections.
 */
 
@@ -374,10 +374,10 @@ control_flow :: proc() {
 			The when statement is almost identical to the if statement but with some differences:
 
 			* Each condition must be a constant expression as a when
-			  statement is evaluated at compile time.
+				statement is evaluated at compile time.
 			* The statements within a branch do not create a new scope
 			* The compiler checks the semantics and code only for statements
-			  that belong to the first condition that is true
+				that belong to the first condition that is true
 			* An initial statement is not allowed in a when statement
 			* when statements are allowed at file scope
 		*/
@@ -670,7 +670,7 @@ union_type :: proc() {
 	{
 		// NOTE(bill): A union can be used to achieve something similar. Instead
 		// of embedding the base data into the derived types, the derived data
-		// in embedded into the base type. Below is the same example of the
+		// is embedded into the base type. Below is the same example of the
 		// basic game Entity but using an union.
 
 		Entity :: struct {
@@ -757,7 +757,7 @@ using_statement :: proc() {
 	// `using` as a struct field modifier remains available always
 
 	fmt.println("\n# using statement")
-	// using can used to bring entities declared in a scope/namespace
+	// using can be used to bring entities declared in a scope/namespace
 	// into the current scope. This can be applied to import names, struct
 	// fields, procedure fields, and struct values.
 
@@ -768,7 +768,7 @@ using_statement :: proc() {
 			orientation: quaternion128,
 		}
 
-		// It can used like this:
+		// It can be used like this:
 		foo0 :: proc(entity: ^Entity) {
 			fmt.println(entity.position.x, entity.position.y, entity.position.z)
 		}
@@ -1096,7 +1096,7 @@ parametric_polymorphism :: proc() {
 			// `I` is the type of N
 			// `T` is the type passed
 			fmt.printf("Generating an array of type %v from the value %v of type %v\n",
-					   typeid_of(type_of(res)), N, typeid_of(I))
+						 typeid_of(type_of(res)), N, typeid_of(I))
 			for i in 0..<N {
 				res[i] = T(i*i)
 			}
@@ -1216,7 +1216,7 @@ threading_example :: proc() {
 
 
 		for i in 0..<30 {
-			// be mindful of the allocator used for tasks. The allocator needs to be thread safe, or be owned by the task for exclusive use 
+			// be mindful of the allocator used for tasks. The allocator needs to be thread safe, or be owned by the task for exclusive use
 			thread.pool_add_task(&pool, allocator=context.allocator, procedure=task_proc, data=nil, user_index=i)
 		}
 
@@ -1593,7 +1593,7 @@ where_clauses :: proc() {
 	{ // Sanity checks
 		simple_sanity_check :: proc(x: [2]int)
 			where len(x) > 1,
-				  type_of(x) == [2]int {
+					type_of(x) == [2]int {
 			fmt.println(x)
 		}
 	}
@@ -1634,7 +1634,7 @@ where_clauses :: proc() {
 
 		bar :: proc(x: [$N]int) -> bool
 			where 0 < N,
-				  N <= 2 {
+					N <= 2 {
 			fmt.println(#procedure, "was called with the parameter", x)
 			return false
 		}
@@ -1652,7 +1652,7 @@ where_clauses :: proc() {
 	{ // Record types
 		Foo :: struct($T: typeid, $N: int)
 			where intrinsics.type_is_integer(T),
-				  N > 2 {
+					N > 2 {
 			x: [N]T,
 			y: [N-2]T,
 		}
@@ -2541,10 +2541,10 @@ bit_field_type :: proc() {
 	{
 		// `bit_field` fields are accessed by using a dot:
 		Foo :: bit_field u16 {          // backing type must be an integer or array of integers
-		    x: i32     | 3,             // signed integers will be signed extended on use
-		    y: u16     | 2 + 3,         // general expressions
-		    z: My_Enum | SOME_CONSTANT, // ability to define the bit-width elsewhere
-		    w: bool    | 2 when SOME_CONSTANT > 10 else 1,
+				x: i32     | 3,             // signed integers will be signed extended on use
+				y: u16     | 2 + 3,         // general expressions
+				z: My_Enum | SOME_CONSTANT, // ability to define the bit-width elsewhere
+				w: bool    | 2 when SOME_CONSTANT > 10 else 1,
 		}
 
 		v := Foo{}
