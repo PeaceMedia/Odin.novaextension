@@ -39,7 +39,7 @@
                     "description": "Leave blank to look for the binary in your $PATH.",
                     "type": "path",
                     "default": ""
-                },
+                }
             ]
         },
         {
