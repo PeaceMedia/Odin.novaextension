@@ -40,8 +40,6 @@
     <tree-sitter>
         <highlights path="highlights.scm" />
         <folds path="folds.scm" />
-        <indents path="indents.scm" />
-        <symbols path="symbols.scm" />
         <locals path="locals.scm" />
     </tree-sitter>
 </syntax>

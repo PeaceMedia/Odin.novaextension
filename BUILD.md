@@ -6,4 +6,4 @@ This documentation assumes you are at least somewhat familiar with [building Nov
 2. Download the Parser Build Script linked from the [Tree-Sitter parser compilation documentation page](https://docs.nova.app/syntax-reference/tree-sitter/#compiling-a-parser) on Nova's web site (here's a [direct link](https://docs.nova.app/syntax-reference/build_script.zip) if you trust it).
 3. `cd` into the directory created by the ZIP file you downloaded and run `./compile_parser.sh /path/to/tree-sitter-odin /path/to/Nova.app`. If all goes well, a "build" directory will be created.
 4. Copy `build/lib/libtree-sitter-odin.14.1.dylib` from that directory to `Syntaxes/libtree-sitter-odin.dylib` in this project (note the version number part may be different, but whatever it is, it must be removed).
-5. From the `tree-sitter-odin` directory, copy the `.scm` files in the `queries` directory into the `Queries` directory in this project.
+5. From the `tree-sitter-odin` directory, copy the `.scm` files in the `queries` directory into the `Queries` directory in this project. (Note that some of the `.scm` files that will be created are not used by Nova, but it does no harm to include them.)
