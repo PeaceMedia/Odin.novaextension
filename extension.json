@@ -3,7 +3,7 @@
     "name": "Odin for Nova",
     "organization": "Peace Media",
     "description": "Syntax highlighting, issues, and language server integration for Odin.",
-    "version": "0.1",
+    "version": "0.2.0",
     "categories": ["languages", "issues"],
     "license": "BSD 2-clause",
     "bugs": "https://github.com/PeaceMedia/Odin.novaextension/issues",
